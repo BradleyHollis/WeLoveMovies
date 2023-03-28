@@ -4,8 +4,8 @@ function list(){
     return knex("movies").select("*");
 }
 
-function read(movieId){
-    return knex("movies").select("*").where({ movie_id : movieId}).first();
+function read(movie_id){
+    return knex("movies").select("*").where({ movie_id }).first();
 }
 
 module.exports = {
