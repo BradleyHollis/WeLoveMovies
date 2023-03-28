@@ -11,8 +11,13 @@ async function movieExists(req, res, next){
 }
 
 async function list(req, res){
-  const data = await moviesService.list();
-  res.json({ data });
+  const { is_showing } = req.query; 
+  if(is_showing === 'true'){
+    res.json({ data: await moviesService.listOnlyShowing() });
+  }
+  else {
+    res.json({ data: await moviesService.list() });
+  }
 }
 
 async function read(req, res){
