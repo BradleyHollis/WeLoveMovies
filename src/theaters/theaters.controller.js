@@ -1,0 +1,9 @@
+const theatersService = require('./theaters.service');
+
+async function list(req, res){
+    res.json({ data: await theatersService.list() });
+}
+
+module.exports = {
+    list,
+}
