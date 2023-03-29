@@ -44,4 +44,5 @@ async function destroy(req, res){
 module.exports = {
     update: [asyncErrorBoundary(reviewExists), asyncErrorBoundary(update)],
     delete: [asyncErrorBoundary(reviewExists), asyncErrorBoundary(destroy)],
+    list,
 }
